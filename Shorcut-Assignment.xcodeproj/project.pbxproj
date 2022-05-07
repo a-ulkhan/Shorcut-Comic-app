@@ -12,6 +12,15 @@
 		1105FE152826837A00321C91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1105FE142826837A00321C91 /* Assets.xcassets */; };
 		1105FE182826837A00321C91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1105FE162826837A00321C91 /* LaunchScreen.storyboard */; };
 		1105FE3D282684A900321C91 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1105FE3C282684A900321C91 /* Coordinator.swift */; };
+		1105FE4A2826AB4C00321C91 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1105FE492826AB4C00321C91 /* NetworkManager.swift */; };
+		1105FE4D2826CB1700321C91 /* ComicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1105FE4C2826CB1700321C91 /* ComicListViewController.swift */; };
+		1105FE4F2826CC2900321C91 /* ComicListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1105FE4E2826CC2900321C91 /* ComicListViewModel.swift */; };
+		1105FE512826CDC800321C91 /* ComicDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1105FE502826CDC800321C91 /* ComicDataSource.swift */; };
+		1105FE532826CF5600321C91 /* ComicCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1105FE522826CF5600321C91 /* ComicCellModel.swift */; };
+		1105FE552826D74800321C91 /* ComicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1105FE542826D74800321C91 /* ComicCell.swift */; };
+		1105FE582826D9AD00321C91 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1105FE572826D9AD00321C91 /* SnapKit */; };
+		1105FE5B2826DAF600321C91 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1105FE5A2826DAF600321C91 /* SDWebImage */; };
+		1105FE5D2826DF9900321C91 /* ComicProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1105FE5C2826DF9900321C91 /* ComicProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +31,13 @@
 		1105FE172826837A00321C91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1105FE192826837A00321C91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1105FE3C282684A900321C91 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		1105FE492826AB4C00321C91 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		1105FE4C2826CB1700321C91 /* ComicListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicListViewController.swift; sourceTree = "<group>"; };
+		1105FE4E2826CC2900321C91 /* ComicListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicListViewModel.swift; sourceTree = "<group>"; };
+		1105FE502826CDC800321C91 /* ComicDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDataSource.swift; sourceTree = "<group>"; };
+		1105FE522826CF5600321C91 /* ComicCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCellModel.swift; sourceTree = "<group>"; };
+		1105FE542826D74800321C91 /* ComicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCell.swift; sourceTree = "<group>"; };
+		1105FE5C2826DF9900321C91 /* ComicProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +45,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1105FE5B2826DAF600321C91 /* SDWebImage in Frameworks */,
+				1105FE582826D9AD00321C91 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +74,7 @@
 			children = (
 				1105FE0B2826837500321C91 /* AppDelegate.swift */,
 				1105FE0D2826837500321C91 /* SceneDelegate.swift */,
+				1105FE4B2826CAF200321C91 /* Comic List */,
 				1105FE3B2826843700321C91 /* Utilities */,
 				1105FE142826837A00321C91 /* Assets.xcassets */,
 				1105FE162826837A00321C91 /* LaunchScreen.storyboard */,
@@ -68,8 +87,22 @@
 			isa = PBXGroup;
 			children = (
 				1105FE3C282684A900321C91 /* Coordinator.swift */,
+				1105FE492826AB4C00321C91 /* NetworkManager.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		1105FE4B2826CAF200321C91 /* Comic List */ = {
+			isa = PBXGroup;
+			children = (
+				1105FE4C2826CB1700321C91 /* ComicListViewController.swift */,
+				1105FE4E2826CC2900321C91 /* ComicListViewModel.swift */,
+				1105FE502826CDC800321C91 /* ComicDataSource.swift */,
+				1105FE522826CF5600321C91 /* ComicCellModel.swift */,
+				1105FE542826D74800321C91 /* ComicCell.swift */,
+				1105FE5C2826DF9900321C91 /* ComicProvider.swift */,
+			);
+			path = "Comic List";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,6 +122,10 @@
 			dependencies = (
 			);
 			name = "Shorcut-Assignment";
+			packageProductDependencies = (
+				1105FE572826D9AD00321C91 /* SnapKit */,
+				1105FE5A2826DAF600321C91 /* SDWebImage */,
+			);
 			productName = "Shorcut-Assignment";
 			productReference = 1105FE082826837500321C91 /* Shorcut-Assignment.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +154,10 @@
 				Base,
 			);
 			mainGroup = 1105FDFF2826837400321C91;
+			packageReferences = (
+				1105FE562826D9AD00321C91 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				1105FE592826DAF600321C91 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 1105FE092826837500321C91 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -164,9 +205,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1105FE4D2826CB1700321C91 /* ComicListViewController.swift in Sources */,
+				1105FE4A2826AB4C00321C91 /* NetworkManager.swift in Sources */,
 				1105FE0C2826837500321C91 /* AppDelegate.swift in Sources */,
+				1105FE552826D74800321C91 /* ComicCell.swift in Sources */,
 				1105FE0E2826837500321C91 /* SceneDelegate.swift in Sources */,
+				1105FE5D2826DF9900321C91 /* ComicProvider.swift in Sources */,
+				1105FE512826CDC800321C91 /* ComicDataSource.swift in Sources */,
+				1105FE4F2826CC2900321C91 /* ComicListViewModel.swift in Sources */,
 				1105FE3D282684A900321C91 /* Coordinator.swift in Sources */,
+				1105FE532826CF5600321C91 /* ComicCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +422,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1105FE562826D9AD00321C91 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		1105FE592826DAF600321C91 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1105FE572826D9AD00321C91 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1105FE562826D9AD00321C91 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		1105FE5A2826DAF600321C91 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1105FE592826DAF600321C91 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1105FE002826837400321C91 /* Project object */;
 }
