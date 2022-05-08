@@ -7,12 +7,18 @@
 
 import Foundation
 
+protocol ComicListViewModelDelegate: AnyObject {
+    func showDetails(with data: ComicResponse)
+}
+
 protocol ComicListViewModel {
     var onDataRecieved: ((ComicDataSource) -> Void)? { get set }
     var onError: ((_ reason: String) -> Void)? { get set }
     var isLoading: Bool { get set }
+    var delegate: ComicListViewModelDelegate? { get set }
     var provider: ComicProvider { get set }
-    func getComic(forIndex index: Int)
+    func getComics()
+    func selectItem(at indexPath: IndexPath)
 }
 
 final class ComicListViewModelImpl: ComicListViewModel {
@@ -20,23 +26,36 @@ final class ComicListViewModelImpl: ComicListViewModel {
     var onDataRecieved: ((ComicDataSource) -> Void)?
     var onError: ((_ reason: String) -> Void)?
     var isLoading: Bool = false
+    weak var delegate: ComicListViewModelDelegate?
     var provider: ComicProvider
-    
+
     init(provider: ComicProvider) {
         self.provider = provider
     }
-    
-    func getComic(forIndex index: Int) {
+
+    func getComics() {
         isLoading = true
-        provider.getComicBy(index) { result in
-            self.isLoading = false
-            switch result {
-            case .success(let response):
-                self.data.append(response)
+        let group = DispatchGroup()
+        var data: [ComicResponse] = []
+        (1...12).forEach { index in
+            group.enter()
+            provider.getComicBy(index) { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .success(let response):
+                    data.append(response)
+                    group.leave()
+                case .failure(let error):
+                    self.onError?(error.errorReason)
+                    group.leave()
+                }
+            }
+
+            group.notify(queue: .main) { [weak self] in
+                guard let self = self else { return }
+                self.data = data
                 let dataSource = self.makeDataSource(from: self.data)
                 self.onDataRecieved?(dataSource)
-            case .failure(let error):
-                self.onError?(error.errorReason)
             }
         }
     }
@@ -49,12 +68,17 @@ final class ComicListViewModelImpl: ComicListViewModel {
                 number: response.num,
                 date: "\(response.month) / \(response.year)",
                 imgURL: URL(string: response.img),
-                urlToShare: URL(string: response.link),
+                urlToShare: URL(string: response.link ?? ""),
                 isFavorite: false
             )
             items.append(.comic(model))
         }
-    
+
         return ComicDataSourceImpl([ComicSectionModel(items: items)])
+    }
+
+    func selectItem(at indexPath: IndexPath) {
+        let response = data[indexPath.row]
+        delegate?.showDetails(with: response)
     }
 }

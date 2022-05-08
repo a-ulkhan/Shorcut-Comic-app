@@ -21,7 +21,23 @@
 		1105FE582826D9AD00321C91 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1105FE572826D9AD00321C91 /* SnapKit */; };
 		1105FE5B2826DAF600321C91 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1105FE5A2826DAF600321C91 /* SDWebImage */; };
 		1105FE5D2826DF9900321C91 /* ComicProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1105FE5C2826DF9900321C91 /* ComicProvider.swift */; };
+		1105FE62282703A300321C91 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1105FE61282703A300321C91 /* MainCoordinator.swift */; };
+		1105FE6A2827074200321C91 /* ComicsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1105FE692827074200321C91 /* ComicsViewModelTests.swift */; };
+		1105FE71282707B700321C91 /* ComicsProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1105FE70282707B700321C91 /* ComicsProviderMock.swift */; };
+		1105FE762827C67F00321C91 /* ComicDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1105FE752827C67F00321C91 /* ComicDetailViewController.swift */; };
+		1105FE782827C72A00321C91 /* ComicDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1105FE772827C72A00321C91 /* ComicDetailViewModel.swift */; };
+		1105FE7A2827CE6800321C91 /* ComicDetailViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1105FE792827CE6800321C91 /* ComicDetailViewModelTest.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1105FE6B2827074200321C91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1105FE002826837400321C91 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1105FE072826837500321C91;
+			remoteInfo = "Shorcut-Assignment";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1105FE082826837500321C91 /* Shorcut-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shorcut-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +54,13 @@
 		1105FE522826CF5600321C91 /* ComicCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCellModel.swift; sourceTree = "<group>"; };
 		1105FE542826D74800321C91 /* ComicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCell.swift; sourceTree = "<group>"; };
 		1105FE5C2826DF9900321C91 /* ComicProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicProvider.swift; sourceTree = "<group>"; };
+		1105FE61282703A300321C91 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		1105FE672827074200321C91 /* Shorcut-AssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Shorcut-AssignmentTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1105FE692827074200321C91 /* ComicsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsViewModelTests.swift; sourceTree = "<group>"; };
+		1105FE70282707B700321C91 /* ComicsProviderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsProviderMock.swift; sourceTree = "<group>"; };
+		1105FE752827C67F00321C91 /* ComicDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailViewController.swift; sourceTree = "<group>"; };
+		1105FE772827C72A00321C91 /* ComicDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailViewModel.swift; sourceTree = "<group>"; };
+		1105FE792827CE6800321C91 /* ComicDetailViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailViewModelTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +73,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1105FE642827074200321C91 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -57,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				1105FE0A2826837500321C91 /* Shorcut-Assignment */,
+				1105FE682827074200321C91 /* Shorcut-AssignmentTests */,
 				1105FE092826837500321C91 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				1105FE082826837500321C91 /* Shorcut-Assignment.app */,
+				1105FE672827074200321C91 /* Shorcut-AssignmentTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -74,6 +106,8 @@
 			children = (
 				1105FE0B2826837500321C91 /* AppDelegate.swift */,
 				1105FE0D2826837500321C91 /* SceneDelegate.swift */,
+				1105FE5E282702D500321C91 /* Main */,
+				1105FE742827C42C00321C91 /* Comic Detail */,
 				1105FE4B2826CAF200321C91 /* Comic List */,
 				1105FE3B2826843700321C91 /* Utilities */,
 				1105FE142826837A00321C91 /* Assets.xcassets */,
@@ -105,6 +139,33 @@
 			path = "Comic List";
 			sourceTree = "<group>";
 		};
+		1105FE5E282702D500321C91 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1105FE61282703A300321C91 /* MainCoordinator.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		1105FE682827074200321C91 /* Shorcut-AssignmentTests */ = {
+			isa = PBXGroup;
+			children = (
+				1105FE692827074200321C91 /* ComicsViewModelTests.swift */,
+				1105FE792827CE6800321C91 /* ComicDetailViewModelTest.swift */,
+				1105FE70282707B700321C91 /* ComicsProviderMock.swift */,
+			);
+			path = "Shorcut-AssignmentTests";
+			sourceTree = "<group>";
+		};
+		1105FE742827C42C00321C91 /* Comic Detail */ = {
+			isa = PBXGroup;
+			children = (
+				1105FE752827C67F00321C91 /* ComicDetailViewController.swift */,
+				1105FE772827C72A00321C91 /* ComicDetailViewModel.swift */,
+			);
+			path = "Comic Detail";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -130,6 +191,24 @@
 			productReference = 1105FE082826837500321C91 /* Shorcut-Assignment.app */;
 			productType = "com.apple.product-type.application";
 		};
+		1105FE662827074200321C91 /* Shorcut-AssignmentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1105FE6D2827074200321C91 /* Build configuration list for PBXNativeTarget "Shorcut-AssignmentTests" */;
+			buildPhases = (
+				1105FE632827074200321C91 /* Sources */,
+				1105FE642827074200321C91 /* Frameworks */,
+				1105FE652827074200321C91 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1105FE6C2827074200321C91 /* PBXTargetDependency */,
+			);
+			name = "Shorcut-AssignmentTests";
+			productName = "Shorcut-AssignmentTests";
+			productReference = 1105FE672827074200321C91 /* Shorcut-AssignmentTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -142,6 +221,10 @@
 				TargetAttributes = {
 					1105FE072826837500321C91 = {
 						CreatedOnToolsVersion = 13.3;
+					};
+					1105FE662827074200321C91 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = 1105FE072826837500321C91;
 					};
 				};
 			};
@@ -163,6 +246,7 @@
 			projectRoot = "";
 			targets = (
 				1105FE072826837500321C91 /* Shorcut-Assignment */,
+				1105FE662827074200321C91 /* Shorcut-AssignmentTests */,
 			);
 		};
 /* End PBXProject section */
@@ -174,6 +258,13 @@
 			files = (
 				1105FE182826837A00321C91 /* LaunchScreen.storyboard in Resources */,
 				1105FE152826837A00321C91 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1105FE652827074200321C91 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,19 +297,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				1105FE4D2826CB1700321C91 /* ComicListViewController.swift in Sources */,
+				1105FE62282703A300321C91 /* MainCoordinator.swift in Sources */,
 				1105FE4A2826AB4C00321C91 /* NetworkManager.swift in Sources */,
 				1105FE0C2826837500321C91 /* AppDelegate.swift in Sources */,
 				1105FE552826D74800321C91 /* ComicCell.swift in Sources */,
 				1105FE0E2826837500321C91 /* SceneDelegate.swift in Sources */,
 				1105FE5D2826DF9900321C91 /* ComicProvider.swift in Sources */,
+				1105FE762827C67F00321C91 /* ComicDetailViewController.swift in Sources */,
 				1105FE512826CDC800321C91 /* ComicDataSource.swift in Sources */,
 				1105FE4F2826CC2900321C91 /* ComicListViewModel.swift in Sources */,
 				1105FE3D282684A900321C91 /* Coordinator.swift in Sources */,
 				1105FE532826CF5600321C91 /* ComicCellModel.swift in Sources */,
+				1105FE782827C72A00321C91 /* ComicDetailViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1105FE632827074200321C91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1105FE71282707B700321C91 /* ComicsProviderMock.swift in Sources */,
+				1105FE7A2827CE6800321C91 /* ComicDetailViewModelTest.swift in Sources */,
+				1105FE6A2827074200321C91 /* ComicsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1105FE6C2827074200321C91 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1105FE072826837500321C91 /* Shorcut-Assignment */;
+			targetProxy = 1105FE6B2827074200321C91 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1105FE162826837A00321C91 /* LaunchScreen.storyboard */ = {
@@ -400,6 +512,44 @@
 			};
 			name = Release;
 		};
+		1105FE6E2827074200321C91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5WLYGRW68R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Ulkhan.Shorcut-AssignmentTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Shorcut-Assignment.app/Shorcut-Assignment";
+			};
+			name = Debug;
+		};
+		1105FE6F2827074200321C91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5WLYGRW68R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Ulkhan.Shorcut-AssignmentTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Shorcut-Assignment.app/Shorcut-Assignment";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -417,6 +567,15 @@
 			buildConfigurations = (
 				1105FE332826837B00321C91 /* Debug */,
 				1105FE342826837B00321C91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1105FE6D2827074200321C91 /* Build configuration list for PBXNativeTarget "Shorcut-AssignmentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1105FE6E2827074200321C91 /* Debug */,
+				1105FE6F2827074200321C91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

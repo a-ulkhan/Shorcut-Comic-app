@@ -9,6 +9,8 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
+    // Main coordinator should be retained
+    var mainCoordinator: MainCoordinator?
     func scene(
         _ scene: UIScene,
         willConnectTo session: UISceneSession,
@@ -17,13 +19,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         if let window = window {
-            let provider = ComicProviderImpl()
-            let viewModel = ComicListViewModelImpl(provider: provider)
-            let viewController = ComicListViewController(viewModel: viewModel)
-            let emptyNav = UINavigationController(rootViewController: viewController)
-            window.rootViewController = emptyNav
-            window.backgroundColor = .red
+            let navigationController = UINavigationController()
+            mainCoordinator = MainCoordinator(navigation: navigationController)
+            window.rootViewController = navigationController
+            window.backgroundColor = .white
             window.makeKeyAndVisible()
+            mainCoordinator?.start()
         }
     }
 }

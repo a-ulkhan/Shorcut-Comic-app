@@ -16,7 +16,7 @@ final class SimpleNetworkManager {
         return session
     }()
     private init() {}
-    
+
     func fireRequest<T: Decodable>(
         _ urlString: String,
         responseType: T.Type,
@@ -30,7 +30,7 @@ final class SimpleNetworkManager {
             return
         }
         let request = URLRequest(url: url)
-        let dataTask = session.dataTask(with: request) { data, response, error in
+        let dataTask = session.dataTask(with: request) { data, _, _ in
             if let data = data {
                 let decoder = JSONDecoder()
                 do {

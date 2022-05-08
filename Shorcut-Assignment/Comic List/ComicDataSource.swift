@@ -40,8 +40,11 @@ final class ComicDataSourceImpl: ComicDataSource {
         sections[indexPath.section].items[indexPath.row]
     }
     func heightFor(indexPath: IndexPath) -> Double {
-        // TODO: - We can different height config based different items, however we have single item so static(or UITableView.automaticDimension) can be returned
-        // Idealy return CGFloat but it's in UIKit framework and we definetly don't want to import uikit unless it's ui component
+        /* - We can give different height config based different items,
+         however we have single item so static(or UITableView.automaticDimension) can be returned
+         Idealy return CGFloat but it's in UIKit framework and
+         we definetly don't want to import uikit unless it's ui component
+         */
         return 200
     }
 }

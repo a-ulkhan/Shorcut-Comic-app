@@ -10,19 +10,24 @@ import Foundation
 struct ComicResponse: Codable {
     let month: String
     let num: Int
-    let link, year, news, safeTitle: String
-    let transcript, alt: String
+    let link: String?
+    let year, safeTitle: String
+    let transcript: String?
     let img: String
-    let title, day: String
+    let day: String
 
     enum CodingKeys: String, CodingKey {
-        case month, num, link, year, news
+        case month, num, link, year
         case safeTitle = "safe_title"
-        case transcript, alt, img, title, day
+        case transcript, img, day
     }
 }
 
-/* Provider could be set up to provide either from local storage(in case no internet/ or other business logic) or via url request. But here no need since no db implemented
+/*
+ Provider could be set up to provide
+ either from local storage(in case no internet/ or
+ other business logic) or via url request.
+ But here no need since no db implemented
  */
 protocol ComicProvider {
     func getComicBy(_ number: Int, completion: @escaping ((Result<ComicResponse, NetworkError>) -> Void))
